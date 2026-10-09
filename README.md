@@ -1,0 +1,1 @@
+# configuring-external-users-on-entra-id
