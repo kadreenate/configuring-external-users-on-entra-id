@@ -60,7 +60,6 @@ When finished, save your changes.
 
 How to add users to guest users to a directory on Entra ID
 
-Step 1: Add a guest user
 In the left navigation, under Entra ID, select Users, then select All users. On the Users page, select + New user. On the New user menu, select Invite external user and then add your information as the guest user: 
 
 <img width="1606" height="590" alt="image" src="https://github.com/user-attachments/assets/ce53b007-ac7f-422e-8c4c-4fb14a34c7ed" />
@@ -106,5 +105,19 @@ The second command to confirm the Microsoft.Graph Module has been installed: _Ge
 
 Then login to your Azure account with this command: _Connect-MgGraph -Scopes "User.ReadWrite.A_ll"
 
-You will receive a code and sign in URL to login to your account like this: 
+You will receive a code and sign in URL to login to your account: 
+
+<img width="2510" height="334" alt="image" src="https://github.com/user-attachments/assets/4f9e4729-6880-4405-bc39-bacf08fe9470" />
+
+Set the values for the email and redirect for the External user using this command: 
+
+Import-Module Microsoft.Graph.Identity.SignIns
+
+_$params = @{
+    invitedUserEmailAddress = "admin@fabrikam.com"
+    inviteRedirectUrl = "https://myapp.contoso.com"
+}
+_
+Send the MgInvitation command to invite the External user using this command: _New-MgInvitation -BodyParameter $params_
+
 
