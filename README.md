@@ -56,3 +56,55 @@ e. The list does not apply to external users who have already redeemed the invit
 
 When finished, save your changes.
 
+------------------------------------------------------------------------------------------------------------
+
+How to add users to guest users to a directory on Entra ID
+
+Step 1: Add a guest user
+In the left navigation, under Entra ID, select Users, then select All users. On the Users page, select + New user. On the New user menu, select Invite external user and then add your information as the guest user: 
+
+<img width="1606" height="590" alt="image" src="https://github.com/user-attachments/assets/ce53b007-ac7f-422e-8c4c-4fb14a34c7ed" />
+
+Provide the email and other relevant info required in the Basics and Properties tab. Double-check that the user type in the Properties tab is "Guest" before clicking "Invite" to complete the invitation: 
+
+<img width="1597" height="945" alt="image" src="https://github.com/user-attachments/assets/442be5c9-a376-4dfd-b469-a76bf56d8250" />
+
+To sort out bulk invites, go to the Users page and select Bulk operations from the hamburger menu, then select Bulk invite (Preview): 
+
+<img width="1522" height="691" alt="image" src="https://github.com/user-attachments/assets/09f943b2-19f2-4ca8-afde-eeb302a05f5c" />
+
+In the Bulk invite users pane, select Download to get a sample CSV template with invitation properties. Using an editor to view the CSV file, review the template. 
+
+Open the .csv template and add a line for each guest user. Required values are:
+
+a. Email address to invite - the user who will receive an invitation
+b. Redirection URL, the one to which the invited user is forwarded after accepting the invitation.
+
+Then save the file. On the Bulk invite users page, under Upload your CSV file, browse to the file. After the file contents are validated, you will see File uploaded successfully. If there are errors, you must fix them before you can submit the job: 
+
+<img width="393" height="432" alt="image" src="https://github.com/user-attachments/assets/1b533aa6-a6bf-4478-b2fc-a73c8ab941a6" />
+
+When your file passes validation, select Submit to start the Azure bulk operation that adds the invitations.
+
+To view the job status, go to Bulk operation results (preview) in the Activity section: 
+
+<img width="2321" height="138" alt="image" src="https://github.com/user-attachments/assets/526d3373-92e2-4b9a-a902-4395b79d5aa9" />
+
+When the job completes, you will see a notification that the bulk operation succeeded.
+
+To do bulk invites with PowerShell, do the following: 
+Install the Microsoft.Graph PowerShell module if you have not used it before. Run the following two commands and when prompted to confirm press Y:
+
+First command: _Install-Module Microsoft.Graph -Scope CurrentUser -Verbose_
+Then press Y for Yes once prompted like this: 
+
+<img width="3419" height="1338" alt="image" src="https://github.com/user-attachments/assets/216985bc-48eb-4f0a-9dd9-2197464360e5" />
+
+The second command to confirm the Microsoft.Graph Module has been installed: _Get-InstalledModule Microsoft.Graph _
+
+<img width="3419" height="276" alt="image" src="https://github.com/user-attachments/assets/d9861a9d-1b4c-4dc0-a375-9588e602f894" />
+
+Then login to your Azure account with this command: _Connect-MgGraph -Scopes "User.ReadWrite.A_ll"
+
+You will receive a code and sign in URL to login to your account like this: 
+
