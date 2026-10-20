@@ -103,9 +103,9 @@ The second command to confirm the Microsoft.Graph Module has been installed: _Ge
 
 <img width="3419" height="276" alt="image" src="https://github.com/user-attachments/assets/d9861a9d-1b4c-4dc0-a375-9588e602f894" />
 
-Then login to your Azure account with this command: _Connect-MgGraph -Scopes "User.ReadWrite.A_ll"
+Then login to your Azure account with this command: _Connect-MgGraph -Scopes "User.ReadWrite.All"
 
-You will receive a code and sign in URL to login to your account: 
+You will receive a code and a sign-in URL to log in to your account: 
 
 <img width="2510" height="334" alt="image" src="https://github.com/user-attachments/assets/4f9e4729-6880-4405-bc39-bacf08fe9470" />
 
