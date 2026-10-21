@@ -48,11 +48,18 @@ Under Collaboration restrictions, review the available options and accept the de
 
 Note:
 
-a. You can create either an allow list or a deny list. You can't set up both types of lists. By default, whatever domains are not in the allow list are on the deny list, and vice versa.
-b. You can create only one policy per organization. You can update the policy to include more domains, or you can delete the policy to create a new one.
-c. The number of domains you can add to an allow list or deny list is limited only by the size of the policy. The maximum size of the entire policy is 25 KB (25,000 characters), which includes the allow list or deny list and any other parameters configured for other features.
-d. This list works independently from OneDrive for Business and SharePoint Online allow/block lists. If you want to restrict individual file sharing in SharePoint Online, you need to set up an allow or deny list for OneDrive for Business and SharePoint Online.
-e. The list does not apply to external users who have already redeemed the invitation. The list will be enforced after the list is set up. If a user invitation is in a pending state, and you set a policy that blocks their domain, the user's attempt to redeem the invitation will fail.
+a). You can create either an allow list or a deny list. You can't set up both types of lists. By default, whatever domains are not in the allow list are on the deny list, and vice versa.
+
+
+b). You can create only one policy per organization. You can update the policy to include more domains, or you can delete the policy to create a new one.
+
+c). The number of domains you can add to an allow list or deny list is limited only by the size of the policy. The maximum size of the entire policy is 25 KB (25,000 characters), which includes the allow list or deny list and any other parameters configured for other features.
+
+
+d). This list works independently from OneDrive for Business and SharePoint Online allow/block lists. If you want to restrict individual file sharing in SharePoint Online, you need to set up an allow or deny list for OneDrive for Business and SharePoint Online.
+
+
+e). The list does not apply to external users who have already redeemed the invitation. The list will be enforced after the list is set up. If a user invitation is in a pending state, and you set a policy that blocks their domain, the user's attempt to redeem the invitation will fail.
 
 When finished, save your changes.
 
@@ -76,8 +83,10 @@ In the Bulk invite users pane, select Download to get a sample CSV template with
 
 Open the .csv template and add a line for each guest user. Required values are:
 
-a. Email address to invite - the user who will receive an invitation
-b. Redirection URL, the one to which the invited user is forwarded after accepting the invitation.
+a). Email address to invite - the user who will receive an invitation
+
+
+b). Redirection URL, the one to which the invited user is forwarded after accepting the invitation.
 
 Then save the file. On the Bulk invite users page, under Upload your CSV file, browse to the file. After the file contents are validated, you will see File uploaded successfully. If there are errors, you must fix them before you can submit the job: 
 
@@ -92,7 +101,9 @@ To view the job status, go to Bulk operation results (preview) in the Activity s
 When the job completes, you will see a notification that the bulk operation succeeded.
 
 To do bulk invites with PowerShell, do the following: 
-Install the Microsoft.Graph PowerShell module if you have not used it before. Run the following two commands and when prompted to confirm press Y:
+
+
+Install the Microsoft.Graph PowerShell module if you have not used it before. Run the following two commands, and when prompted to confirm, press Y:
 
 First command: _Install-Module Microsoft.Graph -Scope CurrentUser -Verbose_
 Then press Y for Yes once prompted like this: 
@@ -103,7 +114,7 @@ The second command to confirm the Microsoft.Graph Module has been installed: _Ge
 
 <img width="3419" height="276" alt="image" src="https://github.com/user-attachments/assets/d9861a9d-1b4c-4dc0-a375-9588e602f894" />
 
-Then login to your Azure account with this command: _Connect-MgGraph -Scopes "User.ReadWrite.All"
+Then log in to your Azure account with this command: _Connect-MgGraph -Scopes "User.ReadWrite.All"
 
 You will receive a code and a sign-in URL to log in to your account: 
 
